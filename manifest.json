@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+  
+    "name": "Simple Screencapture Extension",
+    "description": "This extension allows you to Screencapture the site.",
+    "version": "1.0",
+    "icons": {
+        "16": "screencapture-icon.png",
+        "48": "screencapture-icon.png",
+        "128": "screencapture-icon.png"
+    },
+    "action": {
+     "default_icon": "screencapture-icon.png",
+     "default_popup": "popup.html"
+    },
+    "permissions": ["tabs", "scripting"],
+    "content_scripts": [{
+        "matches": [
+            "<all_urls>"
+        ],
+        "js": ["page_content_script.js", "html2canvas.min.js"]
+    }]
+  }
